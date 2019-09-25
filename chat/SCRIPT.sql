@@ -1,0 +1,15 @@
+CREATE DATABASE chat;
+
+USE chat;
+
+CREATE TABLE user(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL
+);
+CREATE TABLE mensagem(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	mensagem VARCHAR(200) NOT NULL,
+	destino INT,
+	origem INT,
+	FOREIGN KEY (origem) REFERENCES user (id)
+);
